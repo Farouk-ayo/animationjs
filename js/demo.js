@@ -9,12 +9,12 @@ document.addEventListener(
   function () {
     // Initialize another particleground on an element with the id "yparticles".
     const yparticles = particleground(document.getElementById("particles"), {
-      dotColor: "#ffff",
-      lineColor: "#ffff",
+      dotColor: "#ffffff",
+      lineColor: "#a0c8e0",
       minSpeedX: 0.1,
-      maxSpeedX: 0.2,
+      maxSpeedX: 0.3,
       minSpeedY: 0.1,
-      maxSpeedY: 0.2,
+      maxSpeedY: 0.3,
       directionX: "center", // 'center', 'left' or 'right'. 'center' = dots bounce off edges
       directionY: "center", // 'center', 'up' or 'down'. 'center' = dots bounce off edges
       density: 2000, // Increase the density of particles.
@@ -23,16 +23,17 @@ document.addEventListener(
       proximity: 80,
     });
 
-    yparticles.pause();
-
-    const yparticlesel = document.querySelector(".main");
-    yparticlesel.addEventListener("mouseover", function () {
-      yparticles.start();
+    const yparticlesel = document.querySelectorAll(".movement");
+    yparticlesel.forEach((each) => {
+      each.addEventListener("mouseover", function () {
+        yparticles.start();
+      });
     });
-
     const yparticlese2 = document.querySelector("#particles");
+    yparticles.start();
 
     yparticlese2.addEventListener("mouseover", function () {
+      yparticles.pause();
       yparticlese2.style.overflow = "hidden";
     });
     yparticlese2.addEventListener("mouseleave", function () {
