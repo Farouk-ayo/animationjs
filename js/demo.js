@@ -7,37 +7,49 @@
 document.addEventListener(
   "DOMContentLoaded",
   function () {
-    // Initialize another particleground on an element with the id "yparticles".
-    const yparticles = particleground(document.getElementById("particles"), {
-      dotColor: "#ffffff",
-      lineColor: "#a0c8e0",
-      minSpeedX: 0.1,
-      maxSpeedX: 0.3,
-      minSpeedY: 0.1,
-      maxSpeedY: 0.3,
-      directionX: "center", // 'center', 'left' or 'right'. 'center' = dots bounce off edges
-      directionY: "center", // 'center', 'up' or 'down'. 'center' = dots bounce off edges
-      density: 2000, // Increase the density of particles.
-      particleRadius: 8, // Set the particle radius (adjust as needed).
-      parallaxMultiplier: 29, // Increase the parallax effect for a wider circle.
-      proximity: 80,
-    });
+    let particles; // Define the variable to hold the particle system
 
-    const yparticlesel = document.querySelectorAll(".movement");
-    yparticlesel.forEach((each) => {
-      each.addEventListener("mouseover", function () {
-        yparticles.start();
+    function initializeParticles() {
+      particles = particleground(document.getElementById("particles"), {
+        dotColor: "#ffffff",
+        lineColor: "#a0c8e0",
+        minSpeedX: 0.01, // Adjust the speed values to be slower
+        maxSpeedX: 0.05, // You can experiment with different values
+        minSpeedY: 0.01, // to achieve the desired slow movement.
+        maxSpeedY: 0.05,
+        directionX: "center",
+        directionY: "center",
+        density: 2000,
+        particleRadius: 8,
+        parallaxMultiplier: 29,
+        proximity: 80,
+      });
+    }
+
+    initializeParticles();
+
+    const particleCon1 = document.querySelectorAll(".movement");
+    particleCon1.forEach((each) => {
+      each.addEventListener("mousemove", function () {
+        particles.options.minSpeedX = 0.3; // Adjust the speed values when the mouse is moved
+        particles.options.maxSpeedX = 0.7;
+        particles.options.minSpeedY = 0.3;
+        particles.options.maxSpeedY = 0.7;
+        particles.start();
       });
     });
-    const yparticlese2 = document.querySelector("#particles");
-    yparticles.start();
 
-    yparticlese2.addEventListener("mouseover", function () {
-      yparticles.pause();
-      yparticlese2.style.overflow = "hidden";
+    const particleCon = document.querySelector(".part");
+    const particleCon2 = document.querySelector("#particles");
+
+    particleCon.addEventListener("mousemove", function () {
+      particles.pause();
+      particleCon2.style.overflow = "hidden";
     });
-    yparticlese2.addEventListener("mouseleave", function () {
-      yparticlese2.style.overflow = "visible";
+
+    particleCon2.addEventListener("mouseleave", function () {
+      particleCon2.style.overflow = "visible";
+      particles.start();
     });
   },
   false
