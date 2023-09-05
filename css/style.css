@@ -1,51 +1,4 @@
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* particleground demo */
-
-* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -57,7 +10,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,15 +24,28 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.main {
+  width: 100%;
+  padding: 5rem 0;
+}
+
 #particles {
   position: relative;
   width: 25rem;
   height: 25rem;
   border-radius: 50%;
-  overflow: hidden;
+  background-color: red;
   z-index: 10;
 }
-
+.particle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent; /* Adjust the width as needed */
+  border-right: 10px solid transparent; /* Adjust the width as needed */
+  border-bottom: 20px solid #fff; /* Adjust the color and size as needed */
+  transform: rotate(45deg); /* Rotate the triangle to make it point upwards */
+}
 #introd {
   position: absolute;
   left: 0;
