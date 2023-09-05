@@ -29,6 +29,15 @@ document.addEventListener(
     yparticlesel.addEventListener("mouseover", function () {
       yparticles.start();
     });
+
+    const yparticlese2 = document.querySelector("#particles");
+
+    yparticlese2.addEventListener("mouseover", function () {
+      yparticlese2.style.overflow = "hidden";
+    });
+    yparticlese2.addEventListener("mouseleave", function () {
+      yparticlese2.style.overflow = "visible";
+    });
   },
   false
 );
