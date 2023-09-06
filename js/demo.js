@@ -93,7 +93,7 @@ document.addEventListener(
     });
 
     // Touchmove event listener for pausing animation on mobile
-    particleCon.addEventListener("touchmove", function () {
+    particleCon.addEventListener("touchstart", function () {
       particles.pause();
       particleCon2.style.overflow = "hidden";
     });
