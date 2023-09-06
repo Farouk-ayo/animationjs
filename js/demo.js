@@ -11,8 +11,8 @@ document.addEventListener(
 
     function initializeParticles() {
       particles = particleground(document.getElementById("particles"), {
-        dotColor: "#ff0000",
-        lineColor: "#ff0000",
+        dotColor: "#ff44008f",
+        lineColor: "#ff44008f",
         minSpeedX: 0.01, // Adjust the speed values to be slower
         maxSpeedX: 0.05, // You can experiment with different values
         minSpeedY: 0.01, // to achieve the desired slow movement.
