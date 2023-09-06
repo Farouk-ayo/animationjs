@@ -41,21 +41,7 @@ document.addEventListener(
     });
     particleCon1.forEach((each) => {
       each.addEventListener("touchmove", function () {
-        particles.options.minSpeedX = 0.3; // Adjust the speed values when the mouse is moved
-        particles.options.maxSpeedX = 0.7;
-        particles.options.minSpeedY = 0.3;
-        particles.options.maxSpeedY = 0.7;
         particles.start();
-      });
-    });
-
-    particleCon1.forEach((each) => {
-      each.addEventListener("touchend", function () {
-        particles.options.minSpeedX = 0.3; // Adjust the speed values when the mouse is moved
-        particles.options.maxSpeedX = 0.7;
-        particles.options.minSpeedY = 0.3;
-        particles.options.maxSpeedY = 0.7;
-        particles.pause();
       });
     });
 
